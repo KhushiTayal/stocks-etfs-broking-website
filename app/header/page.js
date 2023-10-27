@@ -1,8 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
 import './header.css';
-
 
 function Header() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -39,8 +38,12 @@ function Header() {
 
   return (
     <header>
-      <h1>Stock Broker</h1>
-      <div className="search-bar">
+      <div className="logo">
+        
+        <Link href="/explore">  <h2>GrowwStonks</h2> </Link>
+        {/* <img src="./logo" alt="Logo" /> */}
+      </div>
+      <div className={`search-bar ${suggestions.length > 0 ? 'has-suggestions' : ''}`}>
         <input
           type="text"
           placeholder="Search for stocks or ETFs"
@@ -50,13 +53,15 @@ function Header() {
         <ul className="suggestions">
           {suggestions.map((suggestion) => (
             <li key={suggestion['1. symbol']}>
-              {suggestion['1. symbol']} - {suggestion['2. name']}
+              {suggestion['1. symbol'] && suggestion['2. name']
+                ? `${suggestion['1. symbol']} - ${suggestion['2. name']}`
+                : 'No data available'}
             </li>
           ))}
         </ul>
       </div>
-      <Link href="/explore">Explore</Link>
-      <Link href="/product">Products</Link>
+      {/* <Link href="/explore">Explore</Link>
+      <Link href="/product">Products</Link> */}
     </header>
   );
 }

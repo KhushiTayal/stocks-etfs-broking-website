@@ -1,0 +1,92 @@
+/* Chart Container Styles */
+.chart-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 16px;
+}
+
+/* Header Styles */
+.chart-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Subtitle Styles */
+.chart-subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Accent Background Styles */
+.accent-background {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -8px;
+  background: #6883BC;
+  border-radius: 50%;
+  filter: blur(3px);
+  z-index: 10;
+}
+
+/* Chart Controls Styles */
+.chart-controls {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+/* Chart Buttons Container Styles */
+.chart-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Chart Button Styles */
+.chart-button {
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #6883BC;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chart-button:hover {
+  background-color: #0056b3;
+}
+
+/* Active Button Styles */
+.active-button {
+  background-color: #6883BC;
+  color: #fff;
+}
+
+/* Inactive Button Styles */
+.inactive-button {
+  background-color: #f9f9f9;
+  color: #6883BC;
+}
+
+/* Rounded Right Button Styles */
+.rounded-right-button {
+  border-radius: 0 5px 5px 0;
+}
+
+/* Responsive Design (adjust as needed) */
+@media (max-width: 600px) {
+  .chart-button {
+    font-size: 14px;
+  }
+}

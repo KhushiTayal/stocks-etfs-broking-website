@@ -1,0 +1,147 @@
+/* CompanyInformation.css */
+
+/* Container */
+.company-information-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Card */
+.company-information-content {
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  max-width: none;
+  width: 100%;
+  margin: 16px;
+}
+
+/* Header */
+.company-information-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.ticker-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Ticker Info Row */
+.company-information-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.ticker-symbol {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.growth-indicator {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.positive {
+  color: #2ecc71; /* Green for positive growth */
+}
+
+.negative {
+  color: #e74c3c; /* Red for negative growth */
+}
+
+.percentage {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* Exchange and Currency Row */
+.company-information-row .exchange,
+.company-information-row .currency {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Company Description */
+.company-description {
+  margin-top: 24px;
+}
+
+/* Sector and Industry Badges */
+.sector-industry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.sector,
+.industry {
+  background-color: #4a90e2;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+/* About Company and Description Text */
+.about-company {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.description-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Moving Averages Section */
+.moving-averages {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.moving-average {
+  flex: 1;
+  text-align: center;
+  padding: 16px;
+  background-color: #ecf0f1;
+  border-radius: 12px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Hide on smaller screens */
+.hidden-lg {
+  display: none;
+}

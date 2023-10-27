@@ -1,97 +1,88 @@
-/* header.css */
-
+/* Base Styles for Header */
 header {
-    background-color: #212529;
-    color: #fff;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+  align-items: center;
+  background-color: #282829; /* Light blue background */
+  padding: 10px;
+  color: #8A307F; /* Dark purple text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0px;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2{
+  color: #eee;
+}
+
+.search-bar {
+  position: relative;
+}
+
+input {
+  width: 500px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff; /* White input background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+input:hover, input:focus {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.has-suggestions input {
+  border-radius: 5px 5px 0 0;
+}
+
+.suggestions {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #eee;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff; /* White background for suggestions */
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.suggestions li {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suggestions li:hover {
+  background-color: #37393d; /* Highlight color for suggestions */
+  color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
   }
-  
+
   h1 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 0 20px;
+    margin-bottom: 10px;
   }
-  
-  .search-bar {
-    position: relative;
-    padding: 0 20px;
-    flex-grow: 1;
-  }
-  
+
   input {
     width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
   }
-  
-  .suggestions {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    max-height: 150px;
-    overflow-y: auto;
-  }
-
-  .search-bar.has-suggestions .suggestions {
-    display: block;
-  }
-  
-  li {
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  /* Navigation links */
-  a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    margin: 0 20px;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    h1 {
-      padding: 10px 20px;
-    }
-  
-    .search-bar {
-      padding: 10px 20px;
-    }
-  
-    input {
-      font-size: 14px;
-    }
-  
-    .suggestions {
-      max-height: 100px;
-    }
-  
-    a {
-      margin: 0;
-      padding: 5px 20px;
-    }
-  }
-  
+}

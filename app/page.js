@@ -8,8 +8,9 @@ import Explore from './explore/page'
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Link href="/explore">explore</Link>
-      <Link href="/product">product</Link>
+      {/* <Link href="/explore">explore</Link>
+      <Link href="/product">product</Link> */}
+      <Explore />
     </main>
   )
 }
