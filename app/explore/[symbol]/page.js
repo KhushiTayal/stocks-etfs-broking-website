@@ -15,7 +15,7 @@ function ProductPage() {
   useEffect(() => {
     if (symbol) {
       // Fetch product data for the symbol here and set it in state.
-      const apiKey = 'demo'; // Replace with your actual Alpha Vantage API key
+      const apiKey = 'OBWBAIJ1XXE7KWM6'; // Replace with your actual Alpha Vantage API key
       const endpoint = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=${apiKey}`;
 
       axios
