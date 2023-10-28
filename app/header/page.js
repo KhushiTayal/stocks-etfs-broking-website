@@ -2,10 +2,17 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import './header.css';
+import ThemeSwitcher from './ThemeSwitcher'; // Import the ThemeSwitcher component
 
 function Header() {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
+  const [isDarkMode, setIsDarkMode] = useState(false); // Add state for dark mode
+
+  // Pass a function to handle theme toggling to the ThemeSwitcher
+  const handleThemeToggle = (isDark) => {
+    setIsDarkMode(isDark);
+  };
 
   useEffect(() => {
     // Fetch stock suggestions from AlphaVantage when the searchTerm changes
@@ -37,7 +44,7 @@ function Header() {
   }, [searchTerm]);
 
   return (
-    <header>
+    <header className={isDarkMode ? 'dark-theme' : ''}>
       <div className="logo">
         
         <Link href="/explore">  <h2>GrowwStonks</h2> </Link>
@@ -62,6 +69,9 @@ function Header() {
       </div>
       {/* <Link href="/explore">Explore</Link>
       <Link href="/product">Products</Link> */}
+            <div className="theme-switcher-container">
+        <ThemeSwitcher onThemeToggle={handleThemeToggle} />
+      </div>
     </header>
   );
 }

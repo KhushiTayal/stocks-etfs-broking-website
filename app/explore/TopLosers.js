@@ -18,7 +18,8 @@ function TopLosers() {
   const loadData = () => {
     setIsLoading(true);
 
-    const endpoint = `https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=${apiKey}`;
+    //const endpoint = `https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=${apiKey}`;
+    const endpoint = `https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=demo`;
 
     axios
       .get(endpoint)

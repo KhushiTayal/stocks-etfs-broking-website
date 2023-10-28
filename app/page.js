@@ -2,6 +2,7 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link'
 import Explore from './explore/page'
+import './globals.css'
 
 //L0YDK0RO21F8MNLR
 

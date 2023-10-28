@@ -1,10 +1,29 @@
+:root {
+  --background-color-light: #ffffff;
+  --text-color-light: #333333;
+  --background-color-dark: #333333;
+  --text-color-dark: #ffffff;
+}
+
+.light-theme {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+.dark-theme {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Add styles for other elements based on the theme */
+
 /* Base Styles for Header */
 header {
   display: flex;
   justify-content: space-between;
   height: 45px;
   align-items: center;
-  background-color: #282829; /* Light blue background */
+  background-color: #bcbcc1; /* Light blue background */
   padding: 10px;
   color: #8A307F; /* Dark purple text */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
