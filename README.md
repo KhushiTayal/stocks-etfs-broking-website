@@ -1,4 +1,4 @@
-    <h1 align="center">Groww Stonks - stocks/etfs broking website</h1>
+# Groww Stonks - stocks/etfs broking website
 
 ## Introduction
 
