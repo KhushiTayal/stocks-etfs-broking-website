@@ -47,7 +47,9 @@ GrowwStonks is an online platform dedicated to stock market data. It presents in
 
 ### Search Functionality
 
-<img alt="Search Functionality" src="/public/images/Screenshot 2023-10-30 113654.png">
+<img alt="Search Functionality" src="/public/images/Screenshot 2023-10-30 152409.png">
+
+<img alt="Search Functionality" src="/public/images/Screenshot 2023-10-30 152328.png">
 
 ## Running Locally
 

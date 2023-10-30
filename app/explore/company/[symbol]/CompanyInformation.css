@@ -1,24 +1,31 @@
 /* :root variables for light theme */
 :root {
-  --text-color-light: #333;
+  --company-text-color-light: #333;
   --company-background-color-light: #fff;
   --accent-background-light: #6883BC;
   --button-background-light: #6883BC;
   --button-text-light: #fff;
   --card-background-light: #f3f4f6;
-  --card-box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* :root variables for dark theme */
-:root {
-  --text-color-dark: #fff;
+  --card-box-shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --company-text-color-dark: #f838e4;
   --company-background-color-dark: #eba843;
   --accent-background-dark: #0056b3;
   --button-background-dark: #0056b3;
   --button-text-dark: #fff;
-  --card-background-dark: #222; 
+  --card-background-dark: #eb7629; 
   --card-box-shadow-dark: 0 4px 8px rgba(255, 255, 255, 0.1); 
 }
+
+/* :root variables for dark theme */
+/* :root {
+  --company-text-color-dark: #f838e4;
+  --company-background-color-dark: #eba843;
+  --accent-background-dark: #0056b3;
+  --button-background-dark: #0056b3;
+  --button-text-dark: #fff;
+  --card-background-dark: #eb7629; 
+  --card-box-shadow-dark: 0 4px 8px rgba(255, 255, 255, 0.1); 
+} */
 
 /* Common styles for both themes */
 /* Container */
@@ -48,13 +55,13 @@
 .company-name {
   font-size: 24px;
   font-weight: 600;
-  color: var(--text-color-light);
+  color: var(--company-text-color-light);
 }
 
 .ticker-price {
   font-size: 20px;
   font-weight: 600;
-  color: var(--text-color-light);
+  color: var(--company-text-color-light);
 }
 
 /* Ticker Info Row */
@@ -67,7 +74,7 @@
 .ticker-symbol {
   font-size: 16px;
   font-weight: 600;
-  color: var(--text-color-light);
+  color: var(--company-text-color-light);
 }
 
 .growth-indicator {
@@ -94,7 +101,7 @@
 .company-information-row .currency {
   font-size: 16px;
   font-weight: 600;
-  color: var(--text-color-light);
+  color: var(--company-text-color-light);
 }
 
 /* Company Description */
@@ -122,7 +129,7 @@
 /* About Company and Description Text */
 .about-company {
   font-size: 16px;
-  color: var(--text-color-light);
+  color: var(--company-text-color-light);
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -152,14 +159,14 @@
 .title {
   font-size: 16px;
   font-weight: 600;
-  color: var(--text-color-light);
+  color: var(--company-text-color-light);
   margin-bottom: 8px;
 }
 
 .value {
   font-size: 20px;
   font-weight: 600;
-  color: var(--text-color-light);
+  color: var(--company-text-color-light);
 }
 
 /* Hide on smaller screens */
@@ -169,7 +176,7 @@
 
 /* Apply dark theme styles when in dark mode */
 [data-theme="dark"] {
-  --text-color-light: #333;
+  --company-text-color-light: #333;
   --company-background-color-light: #fff;
   --accent-background-light: #6883BC;
   --button-background-light: #6883BC;
@@ -177,8 +184,8 @@
   --card-background-light: #f3f4f6;
   --card-box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  --text-color-dark: #fff;
-  --company-background-color-dark: #19376D;
+  --company-text-color-dark: #fff;
+  --company-background-color-dark: #1d6d19;
   --accent-background-dark: #0056b3;
   --button-background-dark: #0056b3;
   --button-text-dark: #fff;
@@ -190,7 +197,7 @@
 [data-theme="dark"] .company-information-content {
   background-color: var(--card-background-dark);
   box-shadow: var(--card-box-shadow-dark);
-  color: var(--text-color-dark);
+  color: var(--company-text-color-dark);
 }
 
 [data-theme="dark"] .sector,
@@ -201,5 +208,5 @@
 
 [data-theme="dark"] .title,
 [data-theme="dark"] .value {
-  color: var(--text-color-dark);
+  color: var(--company-text-color-dark);
 }
