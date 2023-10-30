@@ -38,7 +38,8 @@ function TopLosers() {
   };
 
   const handleCardClick = (symbol) => {
-    router.push(`/explore/${symbol}`);
+    //router.push(`/explore/${symbol}`);
+    router.push(`/explore/company/${symbol}`);
   };
 
   return (
@@ -51,30 +52,30 @@ function TopLosers() {
             key={index}
             className="card"
             onClick={() => handleCardClick(item.ticker)}
-            style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid #e0e0e0',
-              borderRadius: '8px',
-              padding: '16px',
-              margin: '8px',
-              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-              cursor: 'pointer',
-              transition: 'transform 0.2s',
-            }}
+            // style={{
+            //   backgroundColor: '#ffffff',
+            //   border: '1px solid #e0e0e0',
+            //   borderRadius: '8px',
+            //   padding: '16px',
+            //   margin: '8px',
+            //   boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+            //   cursor: 'pointer',
+            //   transition: 'transform 0.2s',
+            // }}
           >
             <h3 style={{ fontSize: '20px', marginBottom: '8px', color: '#333' }}>
               {item.ticker}
             </h3>
-            <p style={{ fontSize: '16px', marginBottom: '4px', color: '#555' }}>
+            <p>
               ${item.price}
             </p>
-            <p style={{ fontSize: '16px', marginBottom: '4px', color: '#555' }}>
+            <p>
               Change Amount: {item.change_amount}
             </p>
-            <p style={{ fontSize: '16px', marginBottom: '4px', color: '#555' }}>
+            <p>
               Change Percentage: {item.change_percentage}
             </p>
-            <p style={{ fontSize: '16px', color: '#555' }}>Volume: {item.volume}</p>
+            <p>Volume: {item.volume}</p>
           </div>
           
           

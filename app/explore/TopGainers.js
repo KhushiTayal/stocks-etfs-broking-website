@@ -58,16 +58,16 @@ function TopGainers() {
             <h3 style={{ fontSize: '20px', marginBottom: '8px', color: '#333' }}>
               {item.ticker}
             </h3>
-            <p style={{ fontSize: '16px', marginBottom: '4px', color: '#A5D7E8' }}>
+            <p>
               ${item.price}
             </p>
-            <p style={{ fontSize: '16px', marginBottom: '4px', color: '#A5D7E8' }}>
+            <p>
               Change Amount: +{item.change_amount}
             </p>
-            <p style={{ fontSize: '16px', marginBottom: '4px', color: '#A5D7E8' }}>
+            <p>
               Change Percentage: +{item.change_percentage}
             </p>
-            <p style={{ fontSize: '16px', color: '#A5D7E8' }}>Volume: {item.volume}</p>
+            <p>Volume: {item.volume}</p>
           </div>
           
           ))}
