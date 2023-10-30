@@ -1,4 +1,11 @@
-/* Card Grid Styles */
+:root {
+  --card-background-light: #eeeeee;
+  --card-box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --card-text-light: #333;
+  --hover-transform-scale-light: 1.05;
+  --hover-box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 .card-grid {
   list-style: none;
   display: grid;
@@ -8,17 +15,18 @@
 }
 
 .card {
-  background-color: #eeeeee;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-background-light);
+  box-shadow: var(--card-box-shadow-light);
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s;
   overflow: hidden;
+  padding: 0px;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: scale(var(--hover-transform-scale-light));
+  box-shadow: var(--hover-box-shadow-light);
 }
 
 .card h3 {
@@ -33,12 +41,32 @@
 
 .card p {
   font-size: 16px;
-  color: #333;
+  color: var(--card-text-light);
   margin: 10px;
   padding: 10px 20px;
 }
 
-/* Load More Button Styles */
+[data-theme="dark"] {
+  --card-background-dark: #0B2447;
+  --card-box-shadow-dark: 0 2px 4px rgba(255, 255, 255, 0.1);
+  --card-text-dark: #A5D7E8;
+  --hover-transform-scale-dark: 1.05;
+  --hover-box-shadow-dark: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--card-background-dark);
+  box-shadow: var(--card-box-shadow-dark);
+  color: var(--card-text-dark);
+  transform: scale(var(--hover-transform-scale-dark));
+  transition: transform 0.2s;
+  border: none;
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: var(--hover-box-shadow-dark);
+}
+
 .load-more {
   display: block;
   margin: 20px auto;
@@ -55,20 +83,8 @@
   background-color: #6883BC;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    padding: 20px;
-  }
-
-  .card h3 {
-    font-size: 20px;
-    padding: 15px;
-  }
-
-  .card p {
-    font-size: 18px;
-    padding: 15px 20px;
-  }
+[data-theme="dark"] .load-more {
+  background-color: #333;
+  color: #eee;
+  transition: background-color 0.3s;
 }

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/navigation'; // Import the useRouter hook
+import { useRouter } from 'next/navigation';
 import "./grid.css";
 
 function TopLosers() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [cardsPerPage, setCardsPerPage] = useState(20);
-  const router = useRouter(); // Initialize the router object
+  const router = useRouter();
 
   useEffect(() => {
     loadData();
@@ -38,7 +38,6 @@ function TopLosers() {
   };
 
   const handleCardClick = (symbol) => {
-    // Route to the Product Page with the symbol as a query parameter
     router.push(`/explore/${symbol}`);
   };
 

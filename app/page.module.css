@@ -5,6 +5,7 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  margin-top: -80px;
 }
 
 .description {
@@ -47,7 +48,8 @@
 }
 
 .card {
-  padding: 1rem 1.2rem;
+  padding: 0.5rem 0.6rem;
+  margin: 20px;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);

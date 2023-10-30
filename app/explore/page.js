@@ -1,15 +1,19 @@
 "use client"
-//OBWBAIJ1XXE7KWM6
 
 import React, { useState } from 'react';
 import TopGainers from './TopGainers';
 import TopLosers from './TopLosers';
+import dynamic from 'next/dynamic';
 import "./explore.css";
+import Providers from '../providers';
+
+
 
 function Explore() {
   const [activeTab, setActiveTab] = useState('gainers');
 
   return (
+    <Providers>
     <div>
       <div className="tab-buttons">
         <button
@@ -28,9 +32,8 @@ function Explore() {
 
       {activeTab === 'gainers' && <TopGainers />}
       {activeTab === 'losers' && <TopLosers />}
-      
-      {/* Rest of your code */}
     </div>
+    </Providers>
   );
 }
 

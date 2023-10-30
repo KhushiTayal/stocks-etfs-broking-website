@@ -2,27 +2,25 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import './header.css';
-import ThemeSwitcher from './ThemeSwitcher'; // Import the ThemeSwitcher component
+import ThemeSwitcher from './ThemeSwitcher';
 
 function Header() {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
-  const [isDarkMode, setIsDarkMode] = useState(false); // Add state for dark mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Pass a function to handle theme toggling to the ThemeSwitcher
   const handleThemeToggle = (isDark) => {
     setIsDarkMode(isDark);
   };
 
   useEffect(() => {
-    // Fetch stock suggestions from AlphaVantage when the searchTerm changes
     const fetchSuggestions = async () => {
       if (searchTerm.trim() === '') {
         setSuggestions([]);
         return;
       }
 
-      const apiKey = 'SH8PXH2XXLCUGMMM'; // Replace with your AlphaVantage API key
+      const apiKey = 'SH8PXH2XXLCUGMMM';
       try {
         const response = await fetch(
           `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchTerm}&apikey=${apiKey}`
@@ -44,7 +42,7 @@ function Header() {
   }, [searchTerm]);
 
   return (
-    <header className={isDarkMode ? 'dark-theme' : ''}>
+    <header>
       <div className="logo">
         
         <Link href="/explore">  <h2>GrowwStonks</h2> </Link>
@@ -67,8 +65,6 @@ function Header() {
           ))}
         </ul>
       </div>
-      {/* <Link href="/explore">Explore</Link>
-      <Link href="/product">Products</Link> */}
             <div className="theme-switcher-container">
         <ThemeSwitcher onThemeToggle={handleThemeToggle} />
       </div>

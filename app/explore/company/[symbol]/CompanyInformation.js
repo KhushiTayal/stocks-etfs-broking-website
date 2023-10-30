@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CompanyInformation.css'; // Import the CSS
+import axios from 'axios';
 
 const CompanyInformation = ({ TickerValue }) => {
   const [error, setError] = useState(false);
@@ -28,35 +29,49 @@ const CompanyInformation = ({ TickerValue }) => {
   const [companyInfo, setCompanyInfo] = useState(null);
 
   useEffect(() => {
-    // Define the API parameters
     const functionParam = 'OVERVIEW';
-    const symbolParam = TickerValue; // Use the TickerValue prop
-    const apiKey = 'OBWBAIJ1XXE7KWM6'; // Replace with your actual Alpha Vantage API key
+    const symbolParam = TickerValue;
+    const apiKey = 'SH8PXH2XXLCUGMMM';
+    console.log('TickerValue', symbolParam);
 
     // Construct the API URL
-    const apiUrl = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbolParam}&apikey=${apiKey}`;
+    //const apiUrl = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbolParam}&apikey=${apiKey}`;
 
-    // Fetch data from the Alpha Vantage API
-    // Fetch data from the Alpha Vantage API
-fetch(apiUrl)
-.then((response) => {
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return response.json(); // This line returns the JSON representation of the response
-})
-.then((data) => {
-  // Update the state with the received data
-  console.log("product response", data);
-  setCompanyInfo(data);
-})
-.catch((error) => {
-  // Handle errors, for example, by setting the error state
-  setError(true);
-  console.error(error);
-});
+    const apiUrl = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo`;
 
-  }, [TickerValue]); // Execute this effect when TickerValue changes
+
+    axios
+  .get(apiUrl)
+  .then((response) => {
+    console.log("Response Status:", response.status);
+
+    if (response.status === 200) {
+      return response.data;
+    } else {
+      // Handle non-200 status codes
+      throw new Error('Network response was not ok');
+    }
+  })
+  .then((data) => {
+    // Check the response data
+    console.log("API Response:", data);
+
+    if (data && Object.keys(data).length > 0) {
+      // Data received successfully
+      setCompanyInfo(data);
+    } else {
+      // Handle the case where the response is empty
+      console.log("Empty response data");
+      setError(true);
+    }
+  })
+  .catch((error) => {
+    // Handle errors, for example, by setting the error state
+    setError(true);
+    console.error("Error fetching company information:", error);
+  });
+
+}, [TickerValue]);
 
 
   const tickerPrice = 105.5;
@@ -112,7 +127,7 @@ fetch(apiUrl)
                 <div className="title">200 Day Moving Average</div>
                 <div className="value">${companyInfo?.['200DayMovingAverage']}</div>
               </div>
-              {/* Add more fields here */}
+
             </div>
           </div>
           <div className="hidden-lg">

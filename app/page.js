@@ -3,15 +3,14 @@ import styles from './page.module.css'
 import Link from 'next/link'
 import Explore from './explore/page'
 import './globals.css'
-
-//L0YDK0RO21F8MNLR
+import Providers from "./providers";
 
 export default function Home() {
   return (
+    <Providers>
     <main className={styles.main}>
-      {/* <Link href="/explore">explore</Link>
-      <Link href="/product">product</Link> */}
       <Explore />
     </main>
+    </Providers>
   )
 }

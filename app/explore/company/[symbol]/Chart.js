@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import StockChart from './StockChart';
-import { ChartData } from '../mockData/ChartInfo';
+import { ChartData } from '../../mockData/ChartInfo';
 import './Chart.css';
 
 function Select({ value, options, onChange }) {
