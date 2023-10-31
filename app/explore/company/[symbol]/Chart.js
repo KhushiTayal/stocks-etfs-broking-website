@@ -1,4 +1,4 @@
-// Chart.js
+
 "use client"
 
 import React, { useEffect, useMemo, useState } from 'react';
@@ -23,7 +23,7 @@ function Chart({ Symbol }) {
   const [isMounted, setIsMounted] = useState(false);
   const [day, setDay] = useState('1year');
   const [chartType, setChartType] = useState('LineChart');
-  const [chartData, setChartData] = useState(null); // State to store chart data
+  const [chartData, setChartData] = useState(null);
   const [seriesData, setSeriesData] = useState({});
 
 
@@ -33,19 +33,16 @@ function Chart({ Symbol }) {
     setIsMounted(true);
   }, []);
 
-  // Function to fetch chart data from the API
   const fetchChartData = async () => {
     try {
       const response = await axios.get(
-        // Replace with your API endpoint
-        // `https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=${Symbol}&apikey=${apiKey}`
-          `https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=TSCO.LON&apikey=demo`
+         `https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=${Symbol}&apikey=${apiKey}`
+        //  `https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=TSCO.LON&apikey=demo`
       );
 
       const weeklyData = response.data['Weekly Adjusted Time Series'];
 
       setSeriesData(weeklyData);
-      // Assuming the API response contains chart data
       setChartData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -53,35 +50,7 @@ function Chart({ Symbol }) {
     }
   };
 
-
-  // const seriesData = chartData['Weekly Adjusted Time Series'];
-
-  // const FilteredStockData = useMemo(() => {
-  //   const currentDate = new Date();
-  //   const selectedData = {};
-
-  //   for (const date in seriesData) {
-  //     const dateObj = new Date(date);
-  //     const timeDiff = currentDate - dateObj;
-
-  //     if (
-  //       (day === '7days' && timeDiff <= 7 * 24 * 60 * 60 * 1000) ||
-  //       (day === '1month' && timeDiff <= 30 * 24 * 60 * 60 * 1000) ||
-  //       (day === '1year' && timeDiff <= 365 * 24 * 60 * 60 * 1000) ||
-  //       (day === '10years' && timeDiff <= 10 * 365 * 24 * 60 * 60 * 1000) ||
-  //       (day === '20years' && timeDiff <= 20 * 365 * 24 * 60 * 60 * 1000)
-  //     ) {
-  //       selectedData[date] = seriesData[date];
-  //     }
-  //   }
-
-  //   return selectedData;
-  // }, [day, seriesData]);
-  // console.log("FilteredStockData", FilteredStockData);
-  
-
   useEffect(() => {
-    // Fetch chart data when the Symbol or day changes
     if (Symbol) {
       fetchChartData();
     }
@@ -91,9 +60,7 @@ function Chart({ Symbol }) {
     return null;
   }
 
-
-
-  // Define FilteredStockData only when seriesData is available
+  
   let FilteredStockData = {};
   if (Object.keys(seriesData).length > 0) {
     const currentDate = new Date();

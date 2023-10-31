@@ -7,25 +7,18 @@
   --button-text-light: #fff;
   --card-background-light: #f3f4f6;
   --card-box-shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --company-text-color-dark: #f838e4;
-  --company-background-color-dark: #eba843;
-  --accent-background-dark: #0056b3;
-  --button-background-dark: #0056b3;
-  --button-text-dark: #fff;
-  --card-background-dark: #eb7629; 
-  --card-box-shadow-dark: 0 4px 8px rgba(255, 255, 255, 0.1); 
 }
 
 /* :root variables for dark theme */
-/* :root {
-  --company-text-color-dark: #f838e4;
-  --company-background-color-dark: #eba843;
+:root {
+  --company-text-color-dark: #fff;
+  --company-background-color-dark: #576CBC;
   --accent-background-dark: #0056b3;
   --button-background-dark: #0056b3;
   --button-text-dark: #fff;
-  --card-background-dark: #eb7629; 
+  --card-background-dark: #576CBC; 
   --card-box-shadow-dark: 0 4px 8px rgba(255, 255, 255, 0.1); 
-} */
+}
 
 /* Common styles for both themes */
 /* Container */
@@ -153,7 +146,7 @@
   text-align: center;
   padding: 16px;
   border-radius: 12px;
-  background-color: #ecf0f1;
+  background-color: var(--company-background-color-dark);
 }
 
 .title {
@@ -175,7 +168,7 @@
 }
 
 /* Apply dark theme styles when in dark mode */
-[data-theme="dark"] {
+/* [data-theme="dark"] {
   --company-text-color-light: #333;
   --company-background-color-light: #fff;
   --accent-background-light: #6883BC;
@@ -191,7 +184,7 @@
   --button-text-dark: #fff;
   --card-background-dark: #222;
   --card-box-shadow-dark: 0 4px 8px rgba(255, 255, 255, 0.1);
-}
+} */
 
 /* Apply theme-specific styles to elements when in dark mode */
 [data-theme="dark"] .company-information-content {
