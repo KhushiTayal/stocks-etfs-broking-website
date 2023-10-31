@@ -1,6 +1,6 @@
  "use client"
 
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname, useSearchParams, useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Chart from './Chart';
@@ -8,14 +8,14 @@ import CompanyInformation from './CompanyInformation';
 
 function ProductPage() {
   const router = useRouter() || {};
-  const { symbol } = router.query || {};
+  const params = useParams();
+  const symbol = params.symbol;
   console.log("symbol", symbol);
-  const [productData, setProductData] = useState(null);
 
   return (
     <div>
       
-      <Chart />
+      <Chart Symbol={symbol} />
       <CompanyInformation TickerValue={symbol} />
       
     </div>

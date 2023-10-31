@@ -35,15 +35,16 @@ const CompanyInformation = ({ TickerValue }) => {
     console.log('TickerValue', symbolParam);
 
     // Construct the API URL
-    //const apiUrl = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbolParam}&apikey=${apiKey}`;
+    const apiUrl = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbolParam}&apikey=${apiKey}`;
 
-    const apiUrl = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo`;
+    // const apiUrl = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo`;
 
 
     axios
   .get(apiUrl)
   .then((response) => {
     console.log("Response Status:", response.status);
+    console.log("response", response.data);
 
     if (response.status === 200) {
       return response.data;

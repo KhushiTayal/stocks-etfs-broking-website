@@ -40,6 +40,7 @@ function TopGainers() {
 
   const handleCardClick = (symbol) => {
     router.push(`/explore/company/${symbol}`);
+    //router.push(`/explore/company/abc`);
     console.log("symbol in TopGainers", symbol);
   };
 
