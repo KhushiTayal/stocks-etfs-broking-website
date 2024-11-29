@@ -5,7 +5,7 @@
 
 ## Introduction
 
-GrowwStonks is an online platform dedicated to stock market data. It presents information about top-performing and underperforming stocks, offers comprehensive stock details and financial data, and provides visual representations such as Line, Candlestick, and Bar charts. Additionally, it includes a convenient quick search feature for easily locating your preferred stocks.
+GrowwStonks is an online platform dedicated to stock market data. It presents information about top-performing and underperforming stocks, offers comprehensive stock details and financial data, and provides visual representations such as Line charts. Additionally, it includes a convenient quick search feature for easily locating your preferred stocks.
 
 ## Features
 
